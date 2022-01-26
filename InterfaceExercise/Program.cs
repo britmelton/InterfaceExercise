@@ -31,13 +31,21 @@ namespace InterfaceExercise
             foreach (var item in vehicles)
             {
                 Console.WriteLine($"\n{item.Year} {item.Make} {item.Model}\n Number of Wheels: {item.NumberOfWheels} \n Logo: {item.Logo} \n {item.Website}\n");
+                if (item.GetType() == car.GetType())
+                {
+                    Console.WriteLine($"The {car.Make} {car.Model} has {car.FuelEfficiency} fuel efficiency.");
+                }
+                else if (item.GetType() == truck.GetType())
+                {
+                    Console.WriteLine($"The {truck.Make} {truck.Model} has a {truck.BedSize} bedsize, but a {truck.CabSize} cabin.");
+                }
+                else if (item.GetType() == suv.GetType())
+                {
+                    Console.WriteLine($"The {suv.Make} {suv.Model} {suv.NoTrunk}");
+                }
+          
             }
-            Console.WriteLine($"The {car.Make} {car.Model} has {car.FuelEfficiency} fuel efficiency.");
-            Console.WriteLine($"The {truck.Make} {truck.Model} has a {truck.BedSize} bedsize, but a {truck.CabSize} cabin.");
-            Console.WriteLine($"The {suv.Make} {suv.Model} {suv.NoTrunk}");
-           
-
-
+ 
             //Creatively display and organize their values
         }
     }
