@@ -17,11 +17,11 @@ namespace InterfaceExercise
              Then, Set each class to inherit from both IVehicle and ICompany and implement their members.*/
 
             //Now, create objects of your 3 classes and give their members values
-            var car = new Car() { FuelEfficiency = "very good", HasTrunk = true, NumberOfWheels = 4, Make = "Toyota", Model = "Yaris", Year = 2012, Logo = "T with circles", Website = "www.Toyota.com"};
+            var car = new Car() { FuelEfficiency = "very good", HasTrunk = true, NumberOfWheels = 4, Make = "Toyota", Model = "Yaris", Year = 2012, Motto = "\"Let\'s go places\"", Website = " www.Toyota.com"};
 
-            var truck = new Truck() { BedSize = "Large", CabSize = "small", NumberOfWheels = 4, Make = "Chevrolet", Model = "Silverado", Year = 2014, Logo = "bowtie emblem", Website = "www.Chevrolet.com" };
+            var truck = new Truck() { BedSize = "Large", CabSize = "small", NumberOfWheels = 4, Make = "Chevrolet", Model = "Silverado", Year = 2014, Motto = "\"Find new roads\"", Website = " www.Chevrolet.com" };
 
-            var suv = new SUV() { OffRoad = true, NoTrunk = "has a wagon-style extended roofline, rather than a trunk", NumberOfWheels = 4, Make = "Subaru", Model = "Ascent", Year = 2022, Logo = "encircled star cluster", Website = "www.Subaru.com"};
+            var suv = new SUV() { OffRoad = true, NoTrunk = "has a wagon-style extended roofline, rather than a trunk", NumberOfWheels = 4, Make = "Subaru", Model = "Ascent", Year = 2022, Motto = "\"Love, it's what makes a Subaru\"", Website = " www.Subaru.com"};
 
             var vehicles = new List<IVehicle>();
             vehicles.Add(car);
@@ -30,7 +30,7 @@ namespace InterfaceExercise
 
             foreach (var item in vehicles)
             {
-                Console.WriteLine($"\n{item.Year} {item.Make} {item.Model}\n Number of Wheels: {item.NumberOfWheels} \n Logo: {item.Logo} \n {item.Website}\n");
+                Console.WriteLine($"\n{item.Year} {item.Make} {item.Model}\nNumber of Wheels: {item.NumberOfWheels} \nMotto: {item.Motto} \nWebsite:{item.Website}");
                 if (item.GetType() == car.GetType())
                 {
                     Console.WriteLine($"The {car.Make} {car.Model} has {car.FuelEfficiency} fuel efficiency.");
@@ -43,6 +43,7 @@ namespace InterfaceExercise
                 {
                     Console.WriteLine($"The {suv.Make} {suv.Model} {suv.NoTrunk}");
                 }
+                item.Drive();
           
             }
  

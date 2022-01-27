@@ -12,7 +12,12 @@ namespace InterfaceExercise
         public string Make { get; set; }
         public string Model { get; set; }
         public int Year { get; set; }
-        public string Logo { get; set; }
+        public string Motto { get; set; }
         public string Website { get; set; }
+
+        public void Drive()
+        {
+            Console.WriteLine($"Driving in my {GetType().Name}");
+        }
     }
 }
